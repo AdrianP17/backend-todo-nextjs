@@ -1,3 +1,13 @@
-import { Task } from "@prisma/client";
+import { ApiProperty } from "@nestjs/swagger";
 
-export type createTask = Omit<Task, "id" | "created_at" | "updated_at">
+
+export class createTask{
+    @ApiProperty({ example: 'Some Title' })
+    title: string
+    @ApiProperty({ example: 'Some Description' })
+    description: string
+    @ApiProperty({ example: '1' })
+    userId: number
+    @ApiProperty({ example: '["work"]' })
+    tags: string[]
+}

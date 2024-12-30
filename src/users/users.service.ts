@@ -15,11 +15,4 @@ export class UsersService {
         return await this.prisma.user.findUnique({where: {username: username}})
     }
 
-    async create(data: createUser): Promise<void> {
-        try {
-            await this.prisma.user.create({data: data})
-        } catch (error) {
-            throw new error(error)
-        }
-    }
 }
